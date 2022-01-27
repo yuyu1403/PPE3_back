@@ -4,7 +4,8 @@
   "description": "AP1 backEnd",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=dev nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,12 @@
   },
   "homepage": "https://github.com/Yuyu1403/PPE3_back#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^14.3.2",
     "express": "^4.17.2",
+    "express-promise-router": "^4.1.1",
+    "mariadb": "^2.5.5",
     "nodemon": "^2.0.15"
   }
 }
