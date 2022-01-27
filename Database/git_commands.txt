@@ -1,0 +1,39 @@
+Cloner repository GitHub:
+
+    > se positionner dans le dossier où l'on veut stocker le projet. Soit manuellement en ouvrant le dossier dans
+    VSC soit en y accedant par le terminal.
+    > git clone https://github.com/(UserName)/(RepositoryName) ex: https://github.com/yuyu1403/PPE3
+
+
+Pusher sur repository GitHub:
+
+    > s'assurer d'être bien positionné dans le dossier .git
+    > git status (si l'on souhaite vérifier l'état du working tree/arbre de travail)
+    > git add . (pour ajouter tous les contenus) 
+        ou 
+    git add <file_name>
+        ou 
+    git add -u (ajoute les contenus déjà tracker par git et évite les indésirables)
+
+
+Récupérer un contenu distant:
+
+    ! Avant de commencer une session de travail: !
+    
+    > git fetch
+    (synchronise notre repo local avec le repo distant. Permet de démarrer sur la base la plus actuelle du projet,
+    de prendre en compte les modifs des autres membres et évite de devoir comparer et trier manuellement par la suite).
+
+    >git pull
+    (va plus loin que git fetch: git pull = git fetch + git merge entre la branche locale et distante).
+
+
+Créer des branches et choisir sa branche de travail:
+
+...to be continued
+
+
+Autres:
+
+    >git log (en qq sorte la carte d'identité du projet: création, commits avec leur identification...)
+
