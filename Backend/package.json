@@ -2,7 +2,7 @@
   "name": "ppe3_back",
   "version": "1.0.0",
   "description": "AP1 backEnd",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=dev nodemon index.js"
