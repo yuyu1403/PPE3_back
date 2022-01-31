@@ -75,7 +75,7 @@ END //
 
 -- annulationReservation -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-CREATE OR REPLACE PROCEDURE annulationReservation (IN p_organisateur BIGINT,IN p_annulation BOOLEAN)
+CREATE OR REPLACE PROCEDURE cancelReservation (IN p_organisateur BIGINT,IN p_annulation BOOLEAN)
 BEGIN
     UPDATE RESERVER
     SET ANNUL_RESA = p_annulation

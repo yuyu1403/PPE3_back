@@ -1,18 +1,20 @@
-const express = require("express")
-// importe le paquet express
+require("dotenv").config({ path: `./config/${process.env.NODE_ENV}.env` })
 
-const PORT = 8000
+const express = require("express");
 
+const app = express();
 
-const app = express()
-// Créé une application express
+const cors = require("cors");
+app.use(cors())
 
-// Ecoute la methode GET et la route "/"
-app.get("/", (req, res) => {
-    res.send("Hello World !")
-})
+app.use(express.json());
 
-// Démarrer le serveur et écouter un port donné
-app.listen(PORT, () => {
-    console.log(`serveur démarré : http://localhost:${PORT}`)
-})
+const testRoute = require("./routes/users");
+
+app.use("/api/test", testRoute);
+
+app.get("/api", (_,res) => res.send("Hello from ap1 v1"));
+
+app.listen(process.env.PORT, () => console.log(`Backend is running on PORT ${process.env.PORT}`));
+
+module.exports = app;
