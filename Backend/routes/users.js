@@ -5,4 +5,5 @@ const { test } = require("../controllers/users");
 router.route("/")
     .post(test);
 
+
 module.exports = router;
