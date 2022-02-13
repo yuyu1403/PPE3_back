@@ -81,5 +81,3 @@ BEGIN
     SET ANNUL_RESA = p_annulation
     WHERE ID_ORGANISATEUR = p_organisateur;
 END //
-
-
