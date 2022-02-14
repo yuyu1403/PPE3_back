@@ -13,10 +13,10 @@ const testRoute = require("./routes/users/users");
 const routeAdmin = require("./routes/admin/admin")
 
 app
-    .use("/api/test", testRoute)
-    .use("/api/admin", routeAdmin);
+    .use("/admin", routeAdmin)
+    
 
-app.get("/api", (_,res) => res.send("Hello from ap1 v1"));
+app.get("/api", (_,res) => res.send({success: "Bienvenue sur l'API M2L"}));
 
 app.listen(process.env.PORT, () => console.log(`Backend is running on PORT ${process.env.PORT}`));
 
