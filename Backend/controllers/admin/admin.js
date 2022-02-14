@@ -36,6 +36,20 @@ module.exports = {
       if (connexion) connexion.end();
     }
   },
+
+  getAllUsers: async (req, res) => {
+      const {} = req.params;
+      let connexion;
+      try {
+        connexion = await pool.getConnection();
+        const result = await connexion.query("CALL getAllUsers ()", []);
+        return res.status(200).json({ success: result });
+      } catch (error) {
+        return res.status(400).json({ error: error.message });
+      } finally {
+        if (connexion) connexion.end();
+      }   
+  },
 };
 
 
