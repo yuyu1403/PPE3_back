@@ -226,19 +226,6 @@ INSERT INTO
    (3003, 'Encas');
 
 INSERT INTO 
-   `produits` (`ID_PRODUITS`, `NOM_PRODUITS`)
-   VALUES
-   (4001, 'Cafe'),
-   (4002, 'The'),
-   (4003, 'Jus Orange'),
-   (4004, 'Eau'),
-   (4005, 'Viennoiserie'),
-   (4006, 'Sandwich'),
-   (4007, 'Sandwich Vegetarien'),
-   (4008, 'Fruit'),
-   (4009, 'Barre energetique');
-
-INSERT INTO 
    `administrateur` (`ID_ADMIN`, `MP_ADMIN`)
    VALUES
    (666, 'root');

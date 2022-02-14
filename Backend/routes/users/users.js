@@ -1,6 +1,6 @@
 const router = require("express-promise-router")();
 
-const { test } = require("../controllers/users");
+const { test } = require("../../controllers/users");
 
 router.route("/")
     .post(test);
