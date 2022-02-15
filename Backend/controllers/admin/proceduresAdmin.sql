@@ -2,6 +2,7 @@ use ap1;
 
 DELIMITER //
 
+----------------------- UTILISATEUR -----------------------------------------------
 -- getOneUsers -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 CREATE OR REPLACE PROCEDURE getOneUser (IN p_utilisateur BIGINT)
@@ -31,3 +32,14 @@ BEGIN
     PASSWORD_UTILISATEUR,
     ID_TYPE_LIGUE FROM UTILISATEUR;
 END //
+
+----------------------- SALLE -----------------------------------------------------
+
+CREATE OR REPLACE PROCEDURE insertNewRoom (IN id_salle BIGINT, IN p_nom_salle VARCHAR(50), IN p_capacite BIGINT)
+BEGIN
+    INSERT INTO `SALLE` (
+        `ID_SALLE`,
+        `NOM_SALLE`,
+        `CAPACITE_ACCUEIL`) VALUES (id_salle, p_nom_salle, p_capacite);
+END //
+    

@@ -9,11 +9,14 @@ app.use(cors())
 
 app.use(express.json());
 
-const testRoute = require("./routes/users/users");
 const routeAdmin = require("./routes/admin/admin")
+
 
 app
     .use("/admin", routeAdmin)
+    
+    
+    
     
 
 app.get("/api", (_,res) => res.send({success: "Bienvenue sur l'API M2L"}));

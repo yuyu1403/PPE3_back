@@ -1,6 +1,25 @@
 const pool = require("../../config/database");
 
 module.exports = {
+  // ADMINISTRATEUR
+
+  identificationAdmin: async (req, res) => {
+    const { mail, password } = req.body;
+    let connexion;
+    try {
+      connexion = await pool.getConnection();
+      const result = await connexion.query(
+        "CALL indentificationAdmin (?, ?)", [mail, password]
+      );
+      return res.status(200).json({ success: result });
+    } catch (error) {
+      return res.status(400).json({ error: error.message });
+    } finally {
+      if (connexion) connexion.end();
+    }
+  }, // marche mal, elle me renvoie mes users et prend n'importe qu'elle password
+
+
 
   // UTILISATEURS
 
@@ -49,7 +68,25 @@ module.exports = {
       } finally {
         if (connexion) connexion.end();
       }   
+  },  
+
+
+  // SALLE
+
+  insertNewRoom: async (req, res) => {
+    const { id, nom, capacite } = req.body;
+    let connexion;
+    try {
+      connexion = await pool.getConnection();
+      const result = await connexion.query ("CALL insertNewRoom (?, ?, ?)", [id, nom, capacite]);
+      return res.status(200).json({ success: result });
+    } catch (error) {
+      return res.status(400).json({ error: error.message });
+    } finally {
+      if (connexion) connexion.end();
+    }
   },
+
 };
 
 
