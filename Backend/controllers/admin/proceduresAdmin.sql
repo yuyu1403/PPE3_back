@@ -42,4 +42,17 @@ BEGIN
         `NOM_SALLE`,
         `CAPACITE_ACCUEIL`) VALUES (id_salle, p_nom_salle, p_capacite);
 END //
-    
+
+
+CREATE OR REPLACE PROCEDURE getOneRoom (IN p_id_salle BIGINT)
+BEGIN
+    SELECT *
+    FROM SALLE
+    WHERE ID_SALLE = p_id_salle;
+END //
+
+CREATE OR REPLACE PROCEDURE getAllRoom ()
+BEGIN
+    SELECT *
+    FROM SALLE;
+END // 

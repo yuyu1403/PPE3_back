@@ -87,6 +87,34 @@ module.exports = {
     }
   },
 
+  getOneRoom: async (req, res) => {
+    const { id } = req.params;
+    let connexion;
+    try {
+      connexion = await pool.getConnection();
+      const result = await connexion.query ("CALL getOneRoom (?)", [id]);
+      return res.status(200).json({ success: result});
+    } catch (error) {
+      return res.status(400).json({ error: error.message })
+    } finally {
+      if (connexion) connexion.end;
+    }
+  },
+
+  getAllRoom: async (req, res) => {
+    const {} = req.params;
+    let connexion;
+    try {
+      connexion = await pool.getConnection();
+      const result = await connexion.query ("CALL getAllRoom ()", []);
+      return res.status(200).json({ success: result});
+    } catch (error) {
+      return res.status(400).json({ error: error.message})
+    } finally {
+      if (connexion) connexion.end;
+    }
+  }
+
 };
 
 
