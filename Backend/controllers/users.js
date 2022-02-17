@@ -15,21 +15,5 @@ module.exports = {
     } finally {
       if (connexion) connexion.end();
     }
-  },
-  updateUser: async (req, res) => {
-    const {id} = req.params;
-    const { prenom, nom, email, telephone, password, typeLigue } = req.body;
-    let connexion;
-    try {
-      connexion = await pool.getConnection();
-      const result = await connexion.query("CALL updateUser (?, ?, ?, ?, ?, ?, ?)",
-      [id, prenom, nom, email, telephone, password, typeLigue]
-      );
-      return res.status(200).json({ success: result });
-    } catch (error) {
-      return res.status(400).json({ error: error.message });
-    } finally {
-      if (connexion) connexion.end();
-    }
-  },
+  }
 };
