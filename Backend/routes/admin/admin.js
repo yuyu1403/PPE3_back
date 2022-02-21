@@ -1,6 +1,6 @@
 const router = require("express-promise-router")();
 
-const { getOneUser, insertNewUser, getAllUsers, insertNewRoom, getOneRoom, getAllRoom } = require("../../controllers/admin/admin");
+const { getOneUser, insertNewUser, getAllUsers, insertNewRoom, getOneRoom, getAllRoom, insertNewMeal } = require("../../controllers/admin/admin");
 
 router.route("/:p_utilisateur")
     .get(getOneUser);
@@ -15,5 +15,8 @@ router.route("/salle/room") // pourquoi rajouter un chemin ?
 
 router.route("/salle/:id")
     .get(getOneRoom);
+
+router.route("/repas")
+    .post(insertNewMeal);
 
 module.exports = router;

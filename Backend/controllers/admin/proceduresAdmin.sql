@@ -56,3 +56,13 @@ BEGIN
     SELECT *
     FROM SALLE;
 END // 
+
+------------------------------REPAS--------------------------------------------
+
+CREATE OR REPLACE PROCEDURE insertNewMeal (IN id_repas BIGINT, IN p_type_repas VARCHAR(150))
+BEGIN
+    INSERT INTO `REPAS` (
+        `ID_REPAS`,
+        `TYPE_REPAS`
+        ) VALUES (id_repas, p_type_repas);
+END //

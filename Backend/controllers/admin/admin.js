@@ -113,7 +113,24 @@ module.exports = {
     } finally {
       if (connexion) connexion.end;
     }
-  }
+  },
+
+  // REPAS
+
+  insertNewMeal: async (req, res) => {
+    const { id, type } = req.body;
+    let connexion;
+    try {
+      connexion = await pool.getConnection();
+      const result = await connexion.query ("CALL insertNewMeal (?, ?)", [id, type]);
+      return res.status(200).json({ success: result});
+    } catch (error) {
+      return res.status(400).json({ error: error.message });
+    } finally {
+      if (connexion) connexion.end;
+    }
+  },
+
 
 };
 
