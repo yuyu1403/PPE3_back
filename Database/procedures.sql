@@ -66,11 +66,11 @@ END //
 
 -- identificationAdmin -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-CREATE OR REPLACE PROCEDURE identificationAdmin (IN p_email VARCHAR(255),IN p_password VARCHAR(255))
+CREATE OR REPLACE PROCEDURE identificationAdmin (IN p_password VARCHAR(50))
 BEGIN
-SELECT *
+SELECT ID_ADMIN
 FROM ADMINISTRATEUR
-WHERE MP_ADMIN = Sha1(p_password);
+WHERE MP_ADMIN = p_password;
 END //
 
 -- annulationReservation -------------------------------------------------------------------------------------------------------------------------------------------------------------------

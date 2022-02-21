@@ -4,14 +4,16 @@ module.exports = {
   // ADMINISTRATEUR
 
   identificationAdmin: async (req, res) => {
-    const { mail, password } = req.body;
+    const { password } = req.body;
     let connexion;
     try {
       connexion = await pool.getConnection();
       const result = await connexion.query(
-        "CALL indentificationAdmin (?, ?)", [mail, password]
-      );
-      return res.status(200).json({ success: result });
+        "CALL identificationAdmin ( ?)", [password]
+      ); if (!result[0].length) {
+        res.status(401).json({ error: "Identifiant invalide"});
+      }
+      return res.status(200).json({ success: result })
     } catch (error) {
       return res.status(400).json({ error: error.message });
     } finally {
