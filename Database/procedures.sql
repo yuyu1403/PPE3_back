@@ -53,13 +53,12 @@ BEGIN
     AND ID_ORGANISATEUR = p_organisateur;
 END//
 
--- identification -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- identificationUser -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-CREATE OR REPLACE PROCEDURE identification (IN p_email VARCHAR(255),IN p_password VARCHAR(255))
+CREATE OR REPLACE PROCEDURE identificationUser (IN p_email VARCHAR(255),IN p_password VARCHAR(255))
 BEGIN
-SELECT NOM_UTILISATEUR, PRENOM_UTILISATEUR, MAIL_UTILISATEUR, TELEPHONE_UTILISATEUR, PASSWORD_UTILISATEUR, NOM_LIGUE
+SELECT ID_UTILISATEUR
 FROM UTILISATEUR
-INNER JOIN TYPE_LIGUE ON UTILISATEUR.ID_TYPE_LIGUE = TYPE_LIGUE.ID_TYPE_LIGUE
 WHERE MAIL_UTILISATEUR = p_email
 AND PASSWORD_UTILISATEUR = p_password;
 END //

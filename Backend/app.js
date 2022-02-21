@@ -9,9 +9,10 @@ app.use(cors())
 
 app.use(express.json());
 
-const testRoute = require("./routes/users/users");
+const usersRoute = require("./routes/users/users");
 
-app.use("/api", testRoute);
+app.use("/api", usersRoute);
+
 
 app.get("/api", (_,res) => res.send("Hello from ap1 v1"));
 

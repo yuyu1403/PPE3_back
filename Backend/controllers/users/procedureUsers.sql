@@ -205,26 +205,6 @@ BEGIN
         TYPE_LIGUE
 END //
 
--- insertNewRepas -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-CREATE OR REPLACE PROCEDURE insertNewRepas 
-    (
-        IN p_id BIGINT,
-        IN p_type_repas VARCHAR(255)
-    )
-BEGIN
-    INSERT INTO REPAS
-    (
-        ID_REPAS,
-        TYPE_REPAS
-    ) 
-    VALUES 
-    (
-        p_id,
-        p_type_repas
-    );
-END //
-
 -- deleteRepas -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 CREATE OR REPLACE PROCEDURE deleteRepas 
