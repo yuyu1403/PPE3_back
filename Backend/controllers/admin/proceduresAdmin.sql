@@ -57,6 +57,21 @@ BEGIN
     FROM SALLE;
 END // 
 
+CREATE OR REPLACE PROCEDURE updateRoom (IN p_id_salle BIGINT, IN p_nom VARCHAR(50),IN p_capacite BIGINT)
+BEGIN
+    UPDATE SALLE
+    SET NOM_SALLE = p_nom,
+    CAPACITE_ACCUEIL = p_capacite
+    WHERE ID_SALLE = p_id_salle;
+END //
+
+CREATE OR REPLACE PROCEDURE deleteRoom (IN p_id_salle BIGINT)
+BEGIN
+    DELETE
+    FROM salle
+    WHERE ID_SALLE = p_id_salle;
+END //
+
 ------------------------------REPAS--------------------------------------------
 
 CREATE OR REPLACE PROCEDURE insertNewMeal (IN id_repas BIGINT, IN p_type_repas VARCHAR(150))
