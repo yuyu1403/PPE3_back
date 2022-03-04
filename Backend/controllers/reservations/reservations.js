@@ -11,7 +11,5 @@
 // ----> Meal numbers
 
 
-// Parking dans app?
-// ----> Parking choice (boolean)
-// ----> Parking selection 
+
 
