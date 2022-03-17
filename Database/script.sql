@@ -231,7 +231,6 @@ INSERT INTO
    (3001, 'Petit Dejeuner'),
    (3002, 'Collation'),
    (3003, 'Encas');
-
 INSERT INTO 
    `administrateur` (`ID_ADMIN`, `MP_ADMIN`)
    VALUES

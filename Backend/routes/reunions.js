@@ -1,6 +1,6 @@
 const router = require('express-promise-router')();
 
-const { createReunion, updateReunion, cancelReunion, deleteReunion, getReunionByDate, getAllReunions } = require('../../controllers/reunions/reunions');
+const { createReunion, updateReunion, cancelReunion, deleteReunion, getReunionByDate, getAllReunions } = require('../controllers/reunions');
 
 router.route('/reunion')
     .post(createReunion)

@@ -1,6 +1,6 @@
 const router = require('express-promise-router')();
 
-const { bookReunionDetails, updateReunionDetails, deleteReunionDetails, getAllReunionDetails } = require('../../controllers/reservations/reservations');
+const { bookReunionDetails, updateReunionDetails, deleteReunionDetails, getAllReunionDetails } = require('../controllers/reservations');
 
 router.route('/reservations')
     .post(bookReunionDetails)

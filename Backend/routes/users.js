@@ -1,9 +1,18 @@
 const router = require("express-promise-router")();
 
-const { test } = require("../controllers/users");
+const {insertUser, updateUser, identificationUser} = require("../controllers/users");
 
-router.route("/")
-    .post(test);
+// Users ------------------------------------------------------------------------------------------------------------------------------------
 
+router.route('/users')
+    .post(insertUser)
+
+router.route('/users/:id')
+    .put(updateUser)
+    
+// identification ------------------------------------------------------------------------------------------------------------------------------------
+
+router.route('/identification')
+    .get(identificationUser);
 
 module.exports = router;

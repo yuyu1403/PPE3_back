@@ -9,14 +9,17 @@ app.use(cors());
 
 app.use(express.json());
 
-const routeAdmin = require("./routes/admin/admin");
-const reunionsRoute = require("./routes/reunions/reunions");
-const reservationsRoute = require("./routes/reservations/reservations");
+const usersRoute = require("./routes/users");
+const routeAdmin = require("./routes/admin");
+const reunionsRoute = require("./routes/reunions");
+const reservationsRoute = require("./routes/reservations");
 
 app
   .use("/reunions", reunionsRoute)
   .use("/reservations", reservationsRoute)
-  .use("/admin", routeAdmin);
+  .use("/admin", routeAdmin)
+  .use("/user", usersRoute);
+
 
 app.get("/api", (_, res) => res.send({ success: "Bienvenue sur l'API M2L" }));
 
