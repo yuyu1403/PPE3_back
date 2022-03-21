@@ -28,7 +28,7 @@ router.route("/salle/:id")
     .put(updateRoom)
     .delete(deleteRoom);
 
-router.route("/repas")
+router.route("/repas/repas")
     .post(insertNewMeal)
     .get(getAllRepas)
 
